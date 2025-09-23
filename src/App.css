@@ -1,0 +1,182 @@
+/* Gotham Font Face Declarations */
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/Gotham-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/Gotham-Bold.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/Gotham-Black.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/Gotham-Ultra.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'gotham-narrow';
+  src: url('/fonts/Gotham-Narrow-Ultra.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Theme Colors */
+.blue-theme-text {
+  background: linear-gradient(265deg, white, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.yellow-theme-text {
+  background: linear-gradient(150deg, #B4E3FF 40%, #F1D08C 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.yellow-theme-text-2 {
+  background: linear-gradient(140deg, #FFAB00 1px, #6FA99D 50%,  #16A8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.yellow-theme-text-3 {
+  background: linear-gradient(125deg, #FFAB00 25%, #78A993 50%, #16A8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.yellow-theme-text {
+  background: linear-gradient(150deg, #B4E3FF 10%,  #FCAE11 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.yellow-gradient-2 {
+  background: linear-gradient(265deg, white, #fed7aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.yellow-gradient-2-bg {
+  background: linear-gradient(265deg, white, #fed7aa);
+}
+
+.sky-amber-theme {
+  background: linear-gradient(85deg, #e0f2fe 15%, #fef3c7 44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slate-sky-theme {
+  background: linear-gradient(220deg, #004F85 30%, #578e8c 90%, #89B5B3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slate-sky-theme-bg {
+  background: linear-gradient(340deg, #ffffff, hsl(212, 150%, 100%) 10%, #6FB5D6 );
+ 
+}
+
+.gradient-theme-bg {
+  background: linear-gradient(265deg, white, #60a5fa);
+}
+.gradient-theme-text {
+  background: linear-gradient(265deg, white, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* App-specific styles and overrides */
+
+.App {
+  /* Ensure the app container is properly set up for smooth scrolling */
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Custom animations for GSAP integration */
+.gsap-animation {
+  /* Base class for elements that will be animated by GSAP */
+  will-change: transform, opacity;
+}
+
+/* Performance optimizations for animated elements */
+.expanding-square {
+  /* GPU acceleration for smooth transforms */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Custom section transitions */
+.section-enter {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.section-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  /* Mobile-specific optimizations */
+  .expanding-square {
+    /* Adjust transforms for mobile viewport */
+    transform-origin: bottom right;
+  }
+}
+
+/* Print styles */
+@media print {
+  .expanding-square,
+  .gsap-animation {
+    display: none !important;
+  }
+}
