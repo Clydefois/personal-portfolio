@@ -40,6 +40,19 @@ function App() {
 
   return (
     <div className="App relative">
+      {/* Mobile Beta Notice - only visible below lg breakpoint, does not block corners */}
+      <div
+        className="fixed top-0 left-0 w-full z-[9999] bg-yellow-400 text-black text-center py-2 px-4 font-bold font-[gotham] shadow-lg transition-all duration-300 lg:hidden"
+        style={{
+          letterSpacing: '0.02em',
+          fontSize: '1rem',
+          minHeight: '40px',
+          pointerEvents: 'none', // allow access to corners
+        }}
+      >
+        🚧 Beta Mode: Mobile view is still in website mode.<br className="sm:hidden" />
+        Stay tuned for the upcoming mobile portfolio update!
+      </div>
       {/* Scrollable Gradient Background - Circular curved gradients */}
       <div 
         className="absolute top-0 left-0 w-full pointer-events-none z-0"
