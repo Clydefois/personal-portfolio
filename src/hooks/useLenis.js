@@ -9,16 +9,16 @@ export const useLenis = () => {
   const lenisRef = useRef(null)
 
   useEffect(() => {
-    // Initialize Lenis with much slower scrolling for controlled animation progression
+    // Initialize Lenis with normal scrolling speed
     const lenis = new Lenis({
-      duration: 3,          // Much longer animation duration for slower feel
+      duration: 1.2,        // Normal animation duration 
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
       direction: 'vertical', // Scroll direction
       gestureDirection: 'vertical', // Gesture direction
       smooth: true,         // Enable smooth scrolling
-      mouseMultiplier: 0.3, // Much lower mouse wheel sensitivity (reduced from 1 to 0.3)
+      mouseMultiplier: 1,   // Normal mouse wheel sensitivity
       smoothTouch: false,   // Disable smooth scrolling on touch devices
-      touchMultiplier: 0.5, // Much lower touch gesture sensitivity (reduced from 2 to 0.5)
+      touchMultiplier: 2,   // Normal touch gesture sensitivity
       infinite: false,      // Disable infinite scrolling
       syncTouch: true,      // Sync touch gestures with smooth scrolling
     })
