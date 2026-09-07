@@ -2,6 +2,21 @@
 
 React and Vite portfolio with Personal and Professional views.
 
+## Automated activity
+
+GitHub Actions runs `.github/workflows/daily-activity.yml` daily at 15:39
+Asia/Manila, with a manual run option. Each daily batch creates 10–15 explicitly
+labeled automated empty commits. These represent scheduled automation, not
+manual development, and do not change any portfolio files. The count varies;
+the schedule is fixed and GitHub may delay or miss a run.
+
+The workflow uses the repository's built-in token, needs no AI API key, and
+works while the owner's computer is off. A date marker prevents duplicate
+batches on retries. Normal push rules apply; it never force-pushes or backdates.
+GitHub profile contribution visibility must be checked separately. Disable the
+workflow in Actions to stop it. The previous local maintenance schedule is
+superseded by this workflow.
+
 ## Local setup
 
 Use Node.js 22.23.1 (a supported version for the package's `>=22.22.2`

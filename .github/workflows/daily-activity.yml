@@ -1,0 +1,27 @@
+name: Automated daily activity
+
+on:
+  schedule:
+    # 15:39 Asia/Manila. GitHub may delay scheduled runs.
+    - cron: '39 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automated-daily-activity
+  cancel-in-progress: false
+
+jobs:
+  activity:
+    if: github.repository == 'ClydeQue/personal-portfolio' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Record transparent automated activity
+        run: python3 .github/scripts/daily-activity.py
